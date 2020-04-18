@@ -95,3 +95,4 @@ Things you may want to cover:
 - belongs_to :message
 - belongs_to :group
 
+
