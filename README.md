@@ -1,35 +1,11 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# DB設計
 
 ## usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false|
-|name|string|null: false, add_index|
-|email|string|null: false, add_index|
+|name|string|null: false, index: true|
+|email|string|null: false, index:true|
 |pass|string|null: false|
 
 ### Association
@@ -37,19 +13,16 @@ Things you may want to cover:
 - has_many :groups_users
 - has_many :groups, through: :groups_users
 
-- has_many :messages_users
-- has_many :messages, through: :messages_users
+- has_many :messages
 
 ## groupsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false|
-|name|string|null: false, add_index|
+|name|string|null: false, index: true|
 
 ### Association
-- has_many :messages_groups
-- has_many :messages, through: :messages_groups
+- has_many :messages
 
 - has_many :groups_users
 - has_many :users, through: :groups_users
@@ -58,40 +31,22 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false|
-|body|text|null: false|
+|user|references|null:false, foreign_key: true|
+|group|references|null:false, foreign_key: true|
+|body|text||
 |image|string||
+
+### Association
+- belongs_to :group
+- belongs_to :user
 
 ## groups_usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
 - belongs_to :user
-
-## messages_usersテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|message_id|integer|null: false, foreign_key: true|
-|user_id|integer|null: false, foreign_key: true|
-
-### Association
-- belongs_to :message
-- belongs_to :user
-
-## messages_groupテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|message_id|integer|null: false, foreign_key: true|
-|group_id|ineger|null: false, foreign_key: true|
-
-### Association
-- belongs_to :message
-- belongs_to :group
-
