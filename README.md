@@ -31,8 +31,10 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|body|text|foreign_key: true|
-|image|string|foreign_key: true|
+|user|references|null:false, foreign_key: true|
+|group|references|null:false, foreign_key: true|
+|body|text||
+|image|string||
 
 ### Association
 - belongs_to :group
