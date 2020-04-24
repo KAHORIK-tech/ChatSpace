@@ -1,11 +1,12 @@
 %side-bar
  %user-bar
   %top-items
-   %user-name aaaa
+   %user-name
+    = current_user.name
    %icon
     =link_to '#' do
      %i.fa.fa-edit.white
-    =link_to '#' do
+    =link_to edit_user_path(current_user) do
      %i.fa.fa-cog.white
  %chat-group
   %ul
