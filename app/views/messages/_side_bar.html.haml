@@ -1,17 +1,18 @@
-%side-bar
-  %user-bar
-    %top-items
-      %user-name
+.side-bar
+  .user-bar
+    .top-items
+      .user-name
         = current_user.name
-      %icon
+      .icon
         =link_to new_group_path do
           %i.fa.fa-edit.white
         =link_to edit_user_path(current_user) do
           %i.fa.fa-cog.white
-  %chat-group
+  .chat-group
     %ul.group
       - current_user.groups.each do |group|
-        = link_to '#' do
+        = link_to group_messages_path(group) do
           %li.group__name
             = group.name
-          %li.group__message メッセージはまだありません
+          %li.group__message
+            = group.show_last_message
