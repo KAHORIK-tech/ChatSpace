@@ -1,10 +1,14 @@
 .main-chat
   .group-bar
     %ul.group-info
-      %li.user-name new
-      %li.member aaaa
+      %li.group-info__name
+        = @group.name
+      %li.group-info__member
+        - @users.each do |user|
+          = user.name 
+
     .group-edit
-      %a{href: '#'} Edit
+      %a{href: edit_group_path(@group) } Edit
   .message-table
     = render @messages
   .chat-footer
