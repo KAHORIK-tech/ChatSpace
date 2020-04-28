@@ -160,12 +160,12 @@ side-bar{
     padding-top: 20px;
     ul{
       margin-left: 20px;
-      li.group{
+      li.group__name {
         color: #ffffff;
         font-size: 15px;
         list-style: none;
       }
-      li.message{
+      li.group__message{
         color: #ffffff;
         font-size: 11px;
         list-style: none;

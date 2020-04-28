@@ -1,20 +1,17 @@
 %side-bar
- %user-bar
-  %top-items
-   %user-name
-    = current_user.name
-   %icon
-    =link_to '#' do
-     %i.fa.fa-edit.white
-    =link_to edit_user_path(current_user) do
-     %i.fa.fa-cog.white
- %chat-group
-  %ul
-   %li.group new
-   %li.message まだメッセージがありません
-  %ul
-   %li.group new2
-   %li.message まだメッセージがありません
-  %ul
-   %li.group new3
-   %li.message まだメッセージがありません
+  %user-bar
+    %top-items
+      %user-name
+        = current_user.name
+      %icon
+        =link_to new_group_path do
+          %i.fa.fa-edit.white
+        =link_to edit_user_path(current_user) do
+          %i.fa.fa-cog.white
+  %chat-group
+    %ul.group
+      - current_user.groups.each do |group|
+        = link_to '#' do
+          %li.group__name
+            = group.name
+          %li.group__message メッセージはまだありません
