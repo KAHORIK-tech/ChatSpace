@@ -48,32 +48,36 @@
     }
   }
 
-  .message-table {
+  .message {
     height: calc(100% - 190px);
     background-color: #fafafa;
     display: block;
     padding-left: 40px;
     padding-top: 35px;
-    li.user-name{
-      display: inline-block;
-      font-size: 16px;
-      font-weight: bold;
-      color: #333333;
-      line-height: 16px;
+
+    ul{
+      li.user-name{
+        font-size: 16px;
+        font-weight: bold;
+        color: #333333;
+        line-height: 16px;
+        display: inline;
+        }
+      li.date{
+        display: inline;
+        font-size: 12px;
+        color: #999999;
+        vertical-align: top;
+        }
+      li.message-content{
+        margin-top: 12px;
+        margin-bottom: 46px;
+        font-size: 14px;
+        color: #434a54;
       }
-    li.date{
-      display: inline-block;
-      font-size: 12px;
-      color: #999999;
-      vertical-align: top;
       }
     }
-    .messages{
-      margin-top: 12px;
-      margin-bottom: 46px;
-      font-size: 14px;
-      color: #434a54;
-    }
+ 
   .chat-footer {
     height: 90px;
     background-color: #d2d2d2;

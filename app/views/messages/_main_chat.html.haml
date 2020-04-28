@@ -6,14 +6,7 @@
     .group-edit
       %a{href: '#'} Edit
   .message-table
-    %ul
-      %li.user-name aaaa
-      %li.date 2020/04/22(Wed) 23:47:06
-    .messages Hello
-    %ul
-      %li.user-name aaaa
-      %li.date 2020/04/22(Wed) 23:47:06
-    .message Hello
+    = render @messages
   .chat-footer
     .input-box
       =form_for [@group, @message] do |f|
