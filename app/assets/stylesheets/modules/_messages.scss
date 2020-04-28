@@ -7,6 +7,7 @@
   width: calc(100% - 300px);
   background-color: #ffffff;
   float: right;
+  position: relative;
 
   .group-bar {
     height: 100px;
@@ -48,49 +49,53 @@
     }
   }
 
-  .message {
+  .message-table{
     height: calc(100% - 190px);
     background-color: #fafafa;
     display: block;
     padding-left: 40px;
     padding-top: 35px;
 
-    ul{
-      li.user-name{
-        font-size: 16px;
-        font-weight: bold;
-        color: #333333;
-        line-height: 16px;
-        display: inline;
+    .message {
+
+      ul{
+        li.user-name{
+          font-size: 16px;
+          font-weight: bold;
+          color: #333333;
+          line-height: 16px;
+          display: inline;
+          }
+        li.date{
+          display: inline;
+          font-size: 12px;
+          color: #999999;
+          vertical-align: top;
+          }
+        li.message-content{
+          margin-top: 12px;
+          margin-bottom: 46px;
+          font-size: 14px;
+          color: #434a54;
         }
-      li.date{
-        display: inline;
-        font-size: 12px;
-        color: #999999;
-        vertical-align: top;
         }
-      li.message-content{
-        margin-top: 12px;
-        margin-bottom: 46px;
-        font-size: 14px;
-        color: #434a54;
-      }
       }
     }
  
   .chat-footer {
     height: 90px;
+    width: calc(100vw - 300px);
     background-color: #d2d2d2;
     display: flex;
     padding-left: 40px;
     padding-right: 40px;
     align-items: center;
+    position: absolute;
 
     .input-box{
       height: 50px;
       display: flex;
       position: relative;
-      
       
       .input-box__text{
         width: calc(100vw - 495px);
@@ -109,12 +114,13 @@
       }
       .input-box__submit{
         color: #ffffff;
+        font-size: 18px;
         width: 100px;
         height: 50px;
         background-color: #38aef0;
         margin-left: 15px;
         position: absolute;
-        left: 120%;
+        left: 150%;
         top: -30%;
       }
     }
