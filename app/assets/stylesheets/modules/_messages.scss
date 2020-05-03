@@ -50,15 +50,17 @@
   }
 
   .message-table{
-    height: calc(100% - 190px);
+    height: calc(100vh - 190px);
     background-color: #fafafa;
     display: block;
     padding-left: 40px;
     padding-top: 35px;
+    overflow: scroll;
 
     .message {
 
       ul{
+        
         li.user-name{
           font-size: 16px;
           font-weight: bold;
