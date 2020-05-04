@@ -57,9 +57,9 @@ $(function(){
       $("form")[0].reset();
       $('.message-table').animate({ scrollTop: $('.message-table')[0].scrollHeight});
       $('input').prop('disabled', false);
+    })
+    .fail(function() {
+      alert("メッセージ送信に失敗しました");
     });
   })
-  .fail(function() {
-    alert("メッセージ送信に失敗しました");
-  });
 });
