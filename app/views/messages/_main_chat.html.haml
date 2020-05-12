@@ -4,6 +4,7 @@
       %li.group-info__name
         = @group.name
       %li.group-info__member
+        Member :
         - @users.each do |user|
           = user.name 
 
